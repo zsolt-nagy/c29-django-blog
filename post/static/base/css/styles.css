@@ -1,0 +1,14 @@
+html {
+    font-size: 16px;
+}
+
+body {
+    background-color: #151515;
+    color: whitesmoke;
+    width: 600px;
+    margin: 0 auto;
+}
+
+a {
+    color: #2BA977;
+}

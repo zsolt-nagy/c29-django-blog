@@ -7,12 +7,16 @@ from .models import Post
 # Create your views here.
 
 def index(request):
-    return render(request, 'template.html')
+    context = {
+        'title': 'blog home',
+    }
+    return render(request, 'post/home.html', context)
 
 
 def post(request):
     post_count = Post.objects.all().count()
     context = {
         'count': post_count,
+        'title': 'posts',
     }
     return render(request, 'post/post.html', context)
