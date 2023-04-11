@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<p>
-    There {{ count|pluralize:"is,are" }} {{ count }} post{{ count|pluralize }} 
-    in this blog.
-</p>
+<p>by {{ post.author }} ({{ post.publish_date }})</p>
+<p>{{ post.content }}</p>
+
+<a href="{% url 'posts' %}" class="btn btn-success">Back to Posts</a>
 {% endblock %}

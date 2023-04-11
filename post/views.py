@@ -13,10 +13,20 @@ def index(request):
     return render(request, 'post/home.html', context)
 
 
-def post(request):
-    post_count = Post.objects.all().count()
+def posts(request):
+    posts = Post.objects.all()
     context = {
-        'count': post_count,
+        'posts': posts,
+        'count': posts.count(),
         'title': 'posts',
+    }
+    return render(request, 'post/posts.html', context)
+
+
+def post(request, post_id):
+    post = Post.objects.get(id=post_id)
+    context = {
+        'title': post.title,
+        'post': post,
     }
     return render(request, 'post/post.html', context)

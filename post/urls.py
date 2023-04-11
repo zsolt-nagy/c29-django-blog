@@ -20,5 +20,6 @@ from . import views as post_views
 
 urlpatterns = [
     path('', post_views.index, name='index'),
-    path('posts/', post_views.post, name='posts'),
+    path('posts/', post_views.posts, name='posts'),
+    path('posts/<int:post_id>', post_views.post, name='post'),
 ]
