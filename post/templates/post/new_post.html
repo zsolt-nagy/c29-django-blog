@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% if show_form %}
+<form action="{% url 'new_post' %}" method="POST" data-bs-theme="dark">
+    {% csrf_token %}
+    <div class="form-group m-2">
+        <label for="exampleFormControlInput1">Title</label>
+        <input type="text" required name="title" class="form-control" id="exampleFormControlInput1" placeholder="Title">
+    </div>
+    <div class="form-group m-2">
+        <label for="exampleFormControlInput2">Author</label>
+        <input type="text" required name="author" class="form-control" id="exampleFormControlInput2" placeholder="Author">
+    </div>    
+    <div class="form-group m-2">
+        <label for="exampleFormControlTextarea3">Description</label>
+        <textarea required name="description" placeholder="Description" class="form-control" id="exampleFormControlTextarea3" rows="3"></textarea>
+    </div>
+    <div class="form-group m-2">
+        <button type="submit" class="btn btn-success">Create</button>
+    </div>
+</form>
+{% endif %}
+{% endblock %}
