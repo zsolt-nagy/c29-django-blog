@@ -33,7 +33,6 @@ def post(request, post_id):
 def new_post(request):
     if request.method == 'POST':
         try:
-            raise Exception('Test')
             new_post = Post.objects.create(
                 title=request.POST.get('title'),
                 author=request.POST.get('author'),
